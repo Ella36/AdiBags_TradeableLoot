@@ -1,4 +1,4 @@
-# AdiBags Bound
+# AdiBags TradeableLoot
 > Filters for BoE, BoA, and Soulbound categories in [AdiBags](https://github.com/AdiAddons/AdiBags).
 
 By default, the addon will only sort BoE and BoA. Soulbound items can be

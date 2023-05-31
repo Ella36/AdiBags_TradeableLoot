@@ -1,6 +1,6 @@
-## Interface: 30403
+## Interface: 11501
 
-## Title: AdiBags - Bound
+## Title: AdiBags - TradeableLoot
 ## Notes: Adds BoE/BoA/BoP filters to AdiBags.
 ## Author: Avyiel, Spanky, Outroot
 ## Version: @project-version@

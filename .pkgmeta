@@ -1,8 +1,8 @@
-package-as: AdiBags_Bound
+package-as: AdiBags_TradeableLoot
 enable-nolib-creation: no
 
 move-folders:
-    AdiBags_Bound/AdiBags_Bound: AdiBags_Bound
+    AdiBags_TradeableLoot/AdiBags_TradeableLoot: AdiBags_TradeableLoot
 
 manual-changelog:
     filename: CHANGELOG.md
