@@ -43,6 +43,22 @@ local setmetatable = setmetatable
 local rawget = rawget
 local rawset = rawset
 
+-- Helpers function
+-----------------------------------------------------------
+local function split(s, sep)
+    local fields = {}
+    
+    local sep = sep or " "
+    local pattern = string.format("([^%s]+)", sep)
+    string.gsub(s, pattern, function(c) fields[#fields + 1] = c end)
+    
+    return fields
+end
+
+local function startswith(s, start)
+    return string.sub(s, 1, #start) == start
+end
+
 -- WoW API
 -----------------------------------------------------------
 local CreateFrame = _G.CreateFrame
@@ -53,7 +69,9 @@ local C_TooltipInfo_GetBagItem = C_TooltipInfo and C_TooltipInfo.GetBagItem
 -- WoW Constants
 -----------------------------------------------------------
 local S_ITEM_BOE = ITEM_BIND_ON_EQUIP
-local S_ITEM_TIMER = string.format(BIND_TRADE_TIME_REMAINING, ".*")
+local S_ITEM_TIMER_FORMAT = string.format(BIND_TRADE_TIME_REMAINING, "|")
+local S_ITEM_TIMER_SPLIT = split(S_ITEM_TIMER_FORMAT, "|")
+local S_ITEM_TIMER = S_ITEM_TIMER_SPLIT[1]
 local N_BANK_CONTAINER = BANK_CONTAINER
 
 -- Addon Constants
@@ -145,6 +163,7 @@ function filter:Filter(slotData)
 	end
 end
 
+
 function filter:GetItemCategory(bag, slot)
 	local category = nil
 
@@ -152,7 +171,7 @@ function filter:GetItemCategory(bag, slot)
 		if (msg) then
 			if (string_find(msg, S_ITEM_BOE)) then
 				return S_BOE
-			elseif (string_find(msg, S_ITEM_TIMER)) then
+			elseif (startswith(msg, S_ITEM_TIMER)) then
 				return S_TIMER
 			end
 		end
@@ -161,11 +180,13 @@ function filter:GetItemCategory(bag, slot)
 	if (addon.IsRetail) then
 		-- Untested with S_ITEM_TIMER
 		local tooltipInfo = C_TooltipInfo_GetBagItem(bag, slot)
-		for i=2,_G[_SCANNER]:NumLines() do
+		for i=2,#tooltipInfo.lines do
 			local line = tooltipInfo.lines[i]
 			if (not line) then
 				break
 			end
+
+
 			local bind = GetBindType(line.leftText)
 			if (bind) then
 				category = bind
