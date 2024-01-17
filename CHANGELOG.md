@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file. Be aware th
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.8.0] 2024-01-17
+### Added
+- Added zhCN translations
+### Changed
+- Bump Retail TOC to 10.2.5
+
 ## [1.7.7] 2023-11-16
 ### Changed
 - Bump Classic TOC to 1.15.0
