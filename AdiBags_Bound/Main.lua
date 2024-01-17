@@ -95,20 +95,41 @@ L["Put BoA, BoE, and BoP items in their own sections."] = true -- uiDesc
 -- Options
 L["Enable BoE"] = true
 L["Check this if you want a section for BoE items."] = true
-L["Filter Poor/Common BoE"] = true
-L["Also filter Poor (gray) and Common (white) quality BoE items."] = true
 L["Enable BoA"] = true
 L["Check this if you want a section for BoA items."] = true
-L["Soulbound"] = true
 L["Enable Soulbound"] = true
 L["Check this if you want a section for BoP items."] = true
+L["Filter Poor/Common BoE"] = true
+L["Also filter Poor (gray) and Common (white) quality BoE items."] = true
 L["Only Equipable"] = true
 L["Only filter equipable soulbound items."] = true
+L["Soulbound"] = true
 
 -- Categories
 L[S_BOA] = true
 L[S_BOE] = true
 L[S_BOP] = "Soulbound"
+
+if (GetLocale() == "zhCN") then
+	L["Bound"] = "绑定"
+	L["Put BoA, BoE, and BoP items in their own sections."] = "将 BoA、BoE 和 BoP 项目放在各自的部分中。"
+
+	L["Also filter Poor (gray) and Common (white) quality BoE items."] = "还可以过滤质量较差（灰色）和普通（白色）的 BoE 项目。"
+	L["Check this if you want a section for BoA items."] = "如果您想要 BoA 商品的部分，请选中此选项。"
+	L["Check this if you want a section for BoE items."] = "如果您想要BoE项目的部分，请选中此项。"
+	L["Check this if you want a section for BoP items."] = "如果您想要BoP项目的部分，请选中此项。"
+	L["Enable BoA"] = "启用BoA"
+	L["Enable BoE"] = "启用BoE"
+	L["Enable Soulbound"] = "启用灵魂绑定"
+	L["Filter Poor/Common BoE"] = "过滤白色垃圾/普通BoE"
+	L["Only Equipable"] = "仅可装备"
+	L["Only filter equipable soulbound items."] = "只过滤装备齐全的灵魂物品。"
+	L["Soulbound"] = "灵魂绑定"
+
+	L[S_BOA] = true
+	L[S_BOE] = true
+	L[S_BOP] = "灵魂绑定"
+end
 
 -- Private Default API
 -- This mostly contains methods we always want available
