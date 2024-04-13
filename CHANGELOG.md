@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file. Be aware th
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.8.2] 2024-04-13
+### Changed
+- Bump Retail TOC to 10.2.6
+
 ## [1.8.1] 2024-02-08
 ### Changed
 - Bump Classic TOC to 1.15.1
