@@ -47,11 +47,11 @@ local rawset = rawset
 -----------------------------------------------------------
 local function split(s, sep)
     local fields = {}
-    
+
     local sep = sep or " "
     local pattern = string.format("([^%s]+)", sep)
     string.gsub(s, pattern, function(c) fields[#fields + 1] = c end)
-    
+
     return fields
 end
 
@@ -162,7 +162,6 @@ function filter:Filter(slotData)
 		return self:GetCategoryLabel(category, itemId)
 	end
 end
-
 
 function filter:GetItemCategory(bag, slot)
 	local category = nil
